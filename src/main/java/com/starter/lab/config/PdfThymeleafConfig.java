@@ -59,10 +59,12 @@ public class PdfThymeleafConfig {
         Resource fontResource = resourceLoader.getResource(fontPath + "kalpurush.ttf");
         Resource fontResource1 = resourceLoader.getResource(fontPath + "Nikosh.ttf");
         Resource fontResource2 = resourceLoader.getResource(fontPath + "SUTOM.TTF");
+        Resource fontResource3 = resourceLoader.getResource(fontPath + "DestinyMJ.ttf");
 //        Resource fontResource3 = resourceLoader.getResource(fontPath + "kalpurush_ANSI.ttf");
         logger.info("Font URL: " + fontResource.getURL());
         logger.info("Font URL: " + fontResource1.getURL());
         logger.info("Font URL: " + fontResource2.getURL());
+        logger.info("Font URL: " + fontResource3.getURL());
 
         // Register Bangla fonts
 //        fontResolver.addFont(fontResource.getURL().toString(), true);
@@ -71,7 +73,7 @@ public class PdfThymeleafConfig {
         renderer.getFontResolver().addFont(fontResource.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         renderer.getFontResolver().addFont(fontResource1.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         renderer.getFontResolver().addFont(fontResource2.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-//        renderer.getFontResolver().addFont(fontResource3.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        renderer.getFontResolver().addFont(fontResource3.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         return renderer;
     }
 }
