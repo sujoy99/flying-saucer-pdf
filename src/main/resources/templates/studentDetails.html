@@ -1,0 +1,17 @@
+<!-- studentDetails.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Details</title>
+</head>
+<body>
+<h2>Student Details</h2>
+<div th:if="${student}">
+  <p th:text="'ID: ' + ${student.id}"></p>
+  <p th:text="'First Name: ' + ${student.firstName}"></p>
+  <p th:text="'Last Name: ' + ${student.lastName}"></p>
+  <img th:src="@{'/images/' + ${student.getImageUrl()}}" th:alt="alt" width="200"/>
+</div>
+</body>
+</html>

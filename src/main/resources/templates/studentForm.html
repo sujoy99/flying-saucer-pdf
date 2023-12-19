@@ -1,0 +1,24 @@
+<!-- studentForm.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form</title>
+</head>
+<body>
+<h2>Student Form</h2>
+
+<form th:action="@{/students/upload}" method="post" enctype="multipart/form-data" th:object="${student}">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" th:field="*{firstName}" required/><br/>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" th:field="*{lastName}" required/><br/>
+
+  <label for="file">Upload Image:</label>
+  <input type="file" id="file" name="file" accept="image/*" required/><br/>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
