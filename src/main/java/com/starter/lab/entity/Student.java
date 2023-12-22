@@ -1,10 +1,7 @@
 package com.starter.lab.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Student {
@@ -16,6 +13,13 @@ public class Student {
     private String firstName;
     private String lastName;
     private String imageUrl;
+
+    @Transient
+    public String getPhotosImagePath(){
+        if(imageUrl == null) return null;
+//        return "/images/" + id + "/" + imageUrl;
+        return "/images/" + imageUrl;
+    }
 
     // getters and setters
 

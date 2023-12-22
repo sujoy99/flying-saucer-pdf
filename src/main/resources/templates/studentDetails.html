@@ -11,7 +11,9 @@
   <p th:text="'ID: ' + ${student.id}"></p>
   <p th:text="'First Name: ' + ${student.firstName}"></p>
   <p th:text="'Last Name: ' + ${student.lastName}"></p>
-  <img th:src="@{'/images/' + ${student.getImageUrl()}}" th:alt="alt" width="200"/>
+<!--  <img th:src="@{'/images/' + ${student.getImageUrl()}}" th:alt="alt" width="200"/>-->
+<!--  <img th:src="${student.imageUrl}" th:alt="alt" width="200"/>-->
+  <img th:src="${student.getPhotosImagePath()}" th:alt="alt" width="200"/>
 </div>
 </body>
 </html>
